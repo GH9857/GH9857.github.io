@@ -1,29 +1,30 @@
+console.log("JavaScript loaded!");
+
 function displayMood() {
     let name = document.getElementById("nameInput").value;
-    let mood = document.getElementById("moodInput").value;
-    document.getElementByld("greeting").innerHTML = "Hello, " + name + "! Are you feeling" + mood + "?";
+    let mood = document.getElementById("moodInput").value.toLowerCase();
+    document.getElementById("greeting").innerHTML = "Hello, " + name + "! Are you feeling" + mood + "?";
+    changeBackground(mood);
 }
 
-function changeBgColor() { 
-    const mood = document.getElementById("moodInput").value.toLowerCase();
-    }
 
-function changeBgColorUser() { 
-    let color = document.getElementById("colorInput").value;
-    document.body.style.backgroundColor = color; 
+function setMood(mood) {
+    let name = document.getElementById("nameInput").value || "friend";
+    document.getElementById("greeting").innerHTML = "Hello, " + name + "! Are you feeling " + mood + "?";
+    changeBackground(mood);
 }
-
-function changeBackground() {
-    const mood = document.getElementById("moodInput").value.toLowerCase();
+    
+function changeBackground(mood){ ;
     const colors = {
-        happy: "#ffe2a6",    
-        sad: "#ffaf6e",     
-        calm: "#dsedf8",    
-        angry: '#abcdde',   
-        relaxed: '#a5d6a7',  
-        excited: '#ff9800', 
-        tired: '#757575',    
+        happy : "rgb(255,226,171)",    
+        sad: "rgb(255,175,110)",     
+        calm: "rgb(220,227,248)",    
+        angry: 'rgb(171,205,222)',   
+        relaxed: 'rgb(165,214,167)',  
+        excited: 'rgb(255,152,0)', 
+        tired: 'rgb(117,117,117)',    
     };
+
     const emojis = {
         happy: '👯‍♂️',
         sad: '🫂',
@@ -33,6 +34,9 @@ function changeBackground() {
         tired: '☃︎'
     };
 
-    const color = colors[mood] || "f1ecea"; 
+    const color = colors[mood] || "#f1ecea"; 
+    const emoji = emojis[mood] || "🦉";
+
     document.body.style.backgroundColor = color;
+    document.getElementById("greeting").innerHTML += " " + emoji;
 }
