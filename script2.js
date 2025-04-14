@@ -3,7 +3,7 @@ console.log("JavaScript loaded!");
 function displayMood() {
     let name = document.getElementById("nameInput").value;
     let mood = document.getElementById("moodInput").value.toLowerCase();
-    document.getElementById("greeting").innerHTML = "Hello, " + name + "! Are you feeling" + mood + "?";
+    document.getElementById("greeting").innerHTML = "Hello, " + name + "! Are you feeling " + mood + "?";
     changeBackground(mood);
 }
 
