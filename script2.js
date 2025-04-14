@@ -3,14 +3,14 @@ console.log("JavaScript loaded!");
 function displayMood() {
     let name = document.getElementById("nameInput").value;
     let mood = document.getElementById("moodInput").value.toLowerCase();
-    document.getElementById("greeting").innerHTML = "Hello, " + name + "! Are you feeling " + mood + "?";
+    document.getElementById("greeting").innerHTML = "Hiya, " + name + "! Are you feeling " + mood + "?";
     changeBackground(mood);
 }
 
 
 function setMood(mood) {
-    let name = document.getElementById("nameInput").value || "friend";
-    document.getElementById("greeting").innerHTML = "Hello, " + name + "! Are you feeling " + mood + "?";
+    let name = document.getElementById("nameInput").value || "Bro";
+    document.getElementById("greeting").innerHTML = "Hiya, " + name + "! Are you feeling " + mood + "?";
     changeBackground(mood);
 }
     
